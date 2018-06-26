@@ -1,17 +1,22 @@
 package shelves;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Shelf {
 
-    private ArrayList<Book> books;
+    private HashMap<String, Hashmap<Integer, ArrayList<Book>>> books;
 
     public Shelf() {
-        this.books = new ArrayList<>();
+        this.books = new HashMap<String, Hashmap<Integer, ArrayList<Book>>>();
     }
 
     public void addBook(Book book) {
-        books.add(book);
+        String title = book.getTitle();
+        int edition = book.getEdition();
+
+
+        books.put(title, HashMap<edition, book);
 
     }
 
@@ -19,7 +24,7 @@ public class Shelf {
 
     }
 
-    public ArrayList<Book> listAll() {
+    public HashMap<String, Hashmap<Integer, ArrayList<Book>>> listAll() {
         return books;
     }
 }

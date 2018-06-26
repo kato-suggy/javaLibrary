@@ -6,6 +6,7 @@ import shelves.Shelf;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +14,7 @@ class ShelfTest {
 
     public Shelf testShelf = new Shelf();
     public Book testBook = new Book("some title", "some author", 1, 2000, "some publisher");
-    public ArrayList<Book> books;
+    public HashMap<String, Hashmap<Integer, ArrayList<Book>>> books;
 
     public void addBook() {
         testShelf.addBook(testBook);
@@ -22,7 +23,17 @@ class ShelfTest {
     }
 
     @Test
-    public void AddingABook() {
+    public void AddingFirstCopy() {
+
+        addBook();
+
+        assertEquals(books.containsValue(ArrayList<Book>));
+
+
+    }
+
+    @Test
+    public void AddingSecondCopy() {
 
         addBook();
 
